@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.968 0.007 247.896);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #ffffff;
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  font-size: 90%;
+}
+
+.dark {
+  /* Pure black background */
+  --background: #000000;
+  --foreground: #ffffff;
+
+  /* Card and popover elements - slightly off-black for layering */
+  --card: #121212;
+  --card-foreground: #ffffff;
+  --popover: #121212;
+  --popover-foreground: #ffffff;
+
+  /* Primary colors - clean white for better visibility */
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+
+  /* Secondary elements with subtle gray */
+  --secondary: #2d2d2d;
+  --secondary-foreground: #ffffff;
+
+  /* Muted elements for less prominent UI */
+  --muted: #1f1f1f;
+  --muted-foreground: #a0a0a0;
+
+  /* Accent colors for highlights */
+  --accent: #1f1f1f;
+  --accent-foreground: #ffffff;
+
+  /* Destructive elements (errors, etc.) */
+  --destructive: #ff4545;
+  --destructive-foreground: #ffffff;
+
+  /* Borders and inputs with subtle gray for definition */
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+
+  /* Focus rings with improved visibility */
+  --ring: #4d4dff;
+
+  /* Chart colors with better visibility and contrast */
+  --chart-1: #6366f1;
+  --chart-2: #22c55e;
+  --chart-3: #f59e0b;
+  --chart-4: #ec4899;
+  --chart-5: #ef4444;
+
+  /* Sidebar elements */
+  --sidebar: #121212;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #6366f1;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2d2d2d;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #4d4dff;
+
+  /* Enhanced shadows for better depth on dark backgrounds */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.7);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7), 0 1px 2px -1px rgba(0, 0, 0, 0.7);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.7),
+    0 2px 4px -2px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7),
+    0 4px 6px -4px rgba(0, 0, 0, 0.7);
+}
+
+/* Add this to both light and dark mode sections */
+
+/* For the Select component content */
+.dark .select-content {
+  background-color: var(--popover);
+  border-color: var(--border);
+  color: var(--popover-foreground);
+}
+
+.dark [data-radix-popper-content-wrapper] {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+}
+
+/* Target SelectContent and DropdownMenuContent directly */
+.dark .SelectContent,
+.dark [role="listbox"],
+.dark [data-radix-menu-content] {
+  background-color: var(--popover) !important;
+  color: var(--popover-foreground) !important;
+  border-color: var(--border) !important;
+}
+
+/* Ensure Radix UI components use the correct background */
+.dark [data-radix-popper-content],
+.dark [cmdk-root] {
+  background-color: var(--popover) !important;
+  color: var(--popover-foreground) !important;
+  border-color: var(--border) !important;
+}
+
+@layer base {
+  * {
+    @apply border-[color:var(--border)];
+  }
+  body {
+    @apply bg-[color:var(--background)] text-[color:var(--foreground)];
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.dark :focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.dark .card,
+.dark .input,
+.dark .select,
+.dark .textarea {
+  border-color: var(--border);
+  border-width: 1px;
+}
+
+@keyframes float-in {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.float-in {
+  animation: float-in 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Wallet adapter styles - Modern glass-morphism design */
+.wallet-adapter-button {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: "DM Sans", "Roboto", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  height: 40px !important;
+  line-height: 1 !important;
+  padding: 0 16px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+.wallet-adapter-button-trigger {
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.8),
+    rgba(59, 130, 246, 0.8)
+  ) !important;
+  border: 1px solid rgba(147, 51, 234, 0.5) !important;
+  color: white !important;
+}
+
+.wallet-adapter-button:not([disabled]):focus-visible {
+  outline: 2px solid rgba(147, 51, 234, 0.6) !important;
+  outline-offset: 2px !important;
+}
+
+.wallet-adapter-button:not([disabled]):hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.02) !important;
+  box-shadow: 0 8px 32px rgba(100, 100, 100, 0.15) !important;
+}
+
+.wallet-adapter-button-trigger:not([disabled]):hover {
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.9),
+    rgba(59, 130, 246, 0.9)
+  ) !important;
+  border-color: rgba(147, 51, 234, 0.7) !important;
+}
+
+.wallet-adapter-button[disabled] {
+  background: rgba(64, 65, 68, 0.5) !important;
+  color: rgba(153, 153, 153, 0.8) !important;
+  cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.wallet-adapter-button-end-icon,
+.wallet-adapter-button-start-icon,
+.wallet-adapter-button-end-icon img,
+.wallet-adapter-button-start-icon img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.wallet-adapter-button-end-icon {
+  margin-left: 8px !important;
+}
+
+.wallet-adapter-button-start-icon {
+  margin-right: 8px !important;
+}
+
+.wallet-adapter-collapse {
+  width: 100%;
+}
+
+.wallet-adapter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.wallet-adapter-dropdown-list {
+  position: absolute !important;
+  z-index: 99;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-row-gap: 8px !important;
+  padding: 12px !important;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  list-style: none;
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4) !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-family: "DM Sans", "Roboto", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  min-width: 200px !important;
+}
+
+.wallet-adapter-dropdown-list-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.wallet-adapter-dropdown-list-item {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  transition: all 200ms ease !important;
+  overflow: hidden !important;
+}
+
+.wallet-adapter-dropdown-list-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Custom scrollbar for dark theme */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  scrollbar-color: #262626;
+}
+
+*::-webkit-scrollbar-track {
+  background: inherit;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
+html,
+body {
+  height: 100%;
+}
