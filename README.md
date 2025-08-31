@@ -1,5 +1,15 @@
 # 🚀 CoinBuzz - Web3 Business Management Platform
 
+## 🎥 Live Demo
+
+https://github.com/user-attachments/assets/ae2b0739-0090-418e-8a24-618c3600673a
+
+## 🎨 Design & Prototype
+
+**Figma Design**: [View Interactive Prototype](https://www.figma.com/design/8plcup4qxIsTW1HmBeoLr4?node-id=0-1&t=0fymLF8UMvQXZqvN-1)
+
+---
+
 A comprehensive Web3 business management platform built with Next.js, featuring live cryptocurrency price tracking, prediction markets, leaderboards, and Solana wallet integration.
 
 ## ✨ Features
